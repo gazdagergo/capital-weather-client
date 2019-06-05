@@ -4,7 +4,7 @@ import './screens.scss';
 
 const Page1 = () => (
   <div className="screen">
-    <List items={[{label: 'bar'}]} />
+    <List items={[{label: 'Budapest'}, {label: 'Berlin'}]} />
   </div>
 )
 
