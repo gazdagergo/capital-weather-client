@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { BrowserRouter, Route } from "react-router-dom";
 import Page1Container from '../../containers/Page1Container';
+import Page3Container from '../../containers/Page3Container';
 
 import './styles.css';
 
@@ -15,6 +16,7 @@ const Main = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Route exact path="/" component={Page1Container} />
+      <Route exact path="/city/:id" component={Page3Container} />
     </BrowserRouter>
   </Provider>
 )
