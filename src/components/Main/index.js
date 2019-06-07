@@ -4,11 +4,12 @@ import { createStore } from 'redux';
 import { BrowserRouter, Route } from "react-router-dom";
 import Page1Container from '../../containers/Page1Container';
 import Page3Container from '../../containers/Page3Container';
+import capitalReducer from '../../ducks/capitalReducer';
 
 import './styles.css';
 
 const store = createStore(
-  s => s,
+  capitalReducer,
   process.env.NODE_ENV === 'production' ? undefined : window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // eslint-disable-line no-underscore-dangle
 )
 
