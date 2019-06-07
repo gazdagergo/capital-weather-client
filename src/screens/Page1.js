@@ -1,11 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import List from '../components/List';
 import './screens.scss';
 
-const Page1 = () => (
+const Page1 = ({ savedCities }) => (
   <div className="screen">
-    <List items={[{label: 'Budapest', href: 'city/budapest'}, {label: 'Berlin', href: 'city/berlin'}]} />
+    <List items={savedCities} />
   </div>
 )
+
+Page1.propTypes = {
+  savedCities: PropTypes.arrayOf(PropTypes.shape({})),
+}
+
+Page1.defaultProps = {
+  savedCities: []
+}
 
 export default Page1;

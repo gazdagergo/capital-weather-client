@@ -5,6 +5,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Page1Container from '../../containers/Page1Container';
 import Page3Container from '../../containers/Page3Container';
 import capitalReducer from '../../ducks/capitalReducer';
+import { CITY_ROUTE } from '../../constants';
+
 
 import './styles.css';
 
@@ -17,7 +19,7 @@ const Main = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Route exact path="/" component={Page1Container} />
-      <Route exact path="/city/:id" component={Page3Container} />
+      <Route exact path={`/${CITY_ROUTE}/:id`} component={Page3Container} />
     </BrowserRouter>
   </Provider>
 )
