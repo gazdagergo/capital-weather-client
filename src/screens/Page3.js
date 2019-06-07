@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import './screens.scss';
 
-const Page3 = ({ match: { params } }) => (
+const Page3 = ({ cityName, countryCode }) => (
   <div className="screen">
-    {params.id}
+    {cityName}
+    {countryCode}
   </div>
 )
 
 Page3.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({}),
-  }),
+  cityName: PropTypes.string,
+  countryCode: PropTypes.string,
 }
 
 Page3.defaultProps = {
-  match: { params: null }
+  cityName: '',
+  countryCode: ''
 }
 
-export default withRouter(Page3);
+export default Page3;

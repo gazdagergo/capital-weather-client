@@ -19,7 +19,7 @@ const Main = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Route exact path="/" component={Page1Container} />
-      <Route exact path={`/${CITY_ROUTE}/:id`} component={Page3Container} />
+      <Route exact path={`/${CITY_ROUTE}/:cityName/:countryCode`} component={Page3Container} />
     </BrowserRouter>
   </Provider>
 )
