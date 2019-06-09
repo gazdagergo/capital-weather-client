@@ -1,11 +1,18 @@
 @import './reset';
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
-html {
+html, body {
   height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+#root {
   height: 100%;
+  width: 100%;
 }

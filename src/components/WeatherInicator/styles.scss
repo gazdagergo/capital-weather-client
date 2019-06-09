@@ -1,0 +1,12 @@
+.wx-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  svg {
+    width: 60px;
+  }
+  path {
+    fill: #93B7CC;
+  }
+}

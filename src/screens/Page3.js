@@ -8,7 +8,7 @@ const Page3 = props => {
 
   return (
     <div className="screen">
-      <div className="screen-header">
+      <div className="page-header">
         <div onClick={goBack}>Vissza</div>
       </div>
       <CityInfoContainer {...props} />
