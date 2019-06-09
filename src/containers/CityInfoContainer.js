@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import Page3 from '../screens/Page3';
+import { checkStatusOk } from '../helpers/restHelper';
+import CityInfo from '../components/CityInfo';
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
-class Page3Container extends Component {
+class CityInfoContainer extends Component {
   static propTypes = {
     match: PropTypes.shape({
       params: PropTypes.shape({}),
@@ -22,14 +23,18 @@ class Page3Container extends Component {
   componentDidMount(){
     const { match: { params: { cityName, countryCode } }} = this.props;
     const { dispatch } = this.props;
-    axios.get(`${apiBaseUrl}city/${cityName}/${countryCode}`);
-    dispatch({ type: 'GET_CITY_INFO '})
+    dispatch({ type: 'GET_CITY_INFO__LOADING '})
+    axios.get(`${apiBaseUrl}city/${cityName}/${countryCode}`)
+    .then(checkStatusOk)
+    .then(payload => {
+      dispatch({ type: 'GET_CITY_INFO__SUCCESS', payload })
+    })
   }
 
   render(){
     const { match: { params: { cityName, countryCode } }} = this.props;
-    return <Page3 cityName={cityName} countryCode={countryCode} />
+    return <CityInfo cityName={cityName} countryCode={countryCode} />
   }
 }
 
-export default connect()(Page3Container);
+export default connect()(CityInfoContainer);

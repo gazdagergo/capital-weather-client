@@ -1,22 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './screens.scss';
+import CityInfoContainer from '../containers/CityInfoContainer';
 
-const Page3 = ({ cityName, countryCode }) => (
-  <div className="screen">
-    {cityName}
-    {countryCode}
-  </div>
-)
+const Page3 = props => {
+  const { history: { goBack } } = props;
 
-Page3.propTypes = {
-  cityName: PropTypes.string,
-  countryCode: PropTypes.string,
+  return (
+    <div className="screen">
+      <div className="screen-header">
+        <div onClick={goBack}>Vissza</div>
+      </div>
+      <CityInfoContainer {...props} />
+    </div>
+  )
 }
 
-Page3.defaultProps = {
-  cityName: '',
-  countryCode: ''
+Page3.propTypes = {
+  history: PropTypes.shape({
+    goBack: PropTypes.func,
+  }).isRequired,
 }
 
 export default Page3;
