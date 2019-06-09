@@ -8,3 +8,12 @@ export const selectSavedCities = state => {
     label: capitalName
   }))
 }
+
+export const selectCityInfo = (state, cityName, countryCode) => (
+  state && 
+  state.savedCities && 
+  state.savedCities.find && 
+  state.savedCities.find(city => (
+    city.cityName === cityName && city.countryCode === countryCode
+  ))
+)
