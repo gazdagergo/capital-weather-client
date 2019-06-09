@@ -14,7 +14,18 @@ body {
 .page-header {
   position: fixed;
   top: 0;
-  background: yellow;
   width: 100%;
   left: 0;
+
+  &__back {
+    cursor: pointer;
+    padding: 8px;
+    position: absolute;
+    path {
+      fill: $primaryFill;
+    }
+    &:active {
+      path { fill: $secondaryFill }
+    }
+  }
 }
