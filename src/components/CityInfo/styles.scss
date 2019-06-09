@@ -47,5 +47,17 @@ $fontSize: 18px;
     }
   }
 
+  &__indicator {
+    i {
+      font-size: $fontSize * 3;
+      color: $primaryFill;
+    }
+    span {
+      color: $primaryText;
+      font-size: $fontSize * .8;
+      margin-top: .5em;
+    }
+  }
+
 
 }
