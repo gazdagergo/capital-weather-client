@@ -5,14 +5,15 @@ import './styles.scss';
 
 const List = ({ items }) => (
   <ul className="list">
-    {items.map(({ label, href }) => (
-      <li><Link to={href}>{label}</Link></li>
+    {items.map(({ id, label, href }) => (
+      <li key={id}><Link to={href}>{label}</Link></li>
     ))}
   </ul>
 )
 
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
     label: PropTypes.string,
     href: PropTypes.string,
   })),
