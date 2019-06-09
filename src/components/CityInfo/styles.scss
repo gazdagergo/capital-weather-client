@@ -1,5 +1,28 @@
+$fontSize: 18px;
+
 .city-info {
-  background-color: red;
   display: flex;
   align-items: center;
+
+  &__etc {
+    font-size: $fontSize;
+    color: #93B7CC;
+
+    i {
+      color: #267DBD;
+    }
+  }
+
+  &__temp.icon-item {
+    margin-bottom: 12px;
+
+    i {
+      font-size: $fontSize * 1.6;
+      width: $fontSize * 2;
+      margin-right: $fontSize * .1;
+    }
+    span {
+      font-size: $fontSize * 1.2;
+    }
+  }
 }
