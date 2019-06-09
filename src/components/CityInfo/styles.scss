@@ -1,10 +1,21 @@
-@import '../../scss/colors';
+@import '../../scss/variables';
 
 $fontSize: 18px;
 
 .city-info {
   display: flex;
   align-items: center;
+  width: 50vw;
+  justify-content: space-between;
+  max-width: 600px;
+  margin-top: 3vh;
+
+  @media #{$mobile} {
+    flex-direction: column;
+    height: 65vh;
+    min-height: 330px;
+    justify-content: flex-end;
+  }
 
   &__etc {
     font-size: $fontSize;
@@ -20,7 +31,7 @@ $fontSize: 18px;
 
     i {
       font-size: $fontSize * 1.6;
-      width: $fontSize * 2;
+      width: $fontSize * 1.2;
       margin-right: $fontSize * .1;
     }
     span {
@@ -45,6 +56,11 @@ $fontSize: 18px;
         letter-spacing: .02em;
       }
     }
+
+    @media #{$mobile} {
+      order: -1;
+      margin-bottom: auto;
+    }
   }
 
   &__indicator {
@@ -56,6 +72,9 @@ $fontSize: 18px;
       color: $primaryText;
       font-size: $fontSize * .8;
       margin-top: .5em;
+    }
+    @media #{$mobile} {
+      margin-bottom: $fontSize;
     }
   }
 
