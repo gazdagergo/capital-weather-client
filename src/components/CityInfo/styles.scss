@@ -1,3 +1,5 @@
+@import '../../scss/colors';
+
 $fontSize: 18px;
 
 .city-info {
@@ -6,10 +8,10 @@ $fontSize: 18px;
 
   &__etc {
     font-size: $fontSize;
-    color: #93B7CC;
+    color: $primaryFill;
 
     i {
-      color: #267DBD;
+      color: $secondaryFill;
     }
   }
 
@@ -30,7 +32,7 @@ $fontSize: 18px;
   &__clock {
     .num-text {
       &__number {
-        color: #267DBD;
+        color: $secondaryText;
         font-size: $fontSize * 2.5;
         line-height: .9em;
         font-weight: 300;
@@ -38,7 +40,7 @@ $fontSize: 18px;
       &__text {
         margin-top: .2em;
         font-size: $fontSize * 1.4;
-        color: #93B7CC;
+        color: $primaryText;
         font-weight: 700;
         letter-spacing: .02em;
       }
