@@ -11,7 +11,7 @@ const CityInfo = ({ cityName }) => (
       className="city-info__indicator"
       desc="cloudy" />
     <NumbersWithText
-      className="city-info__minmax"
+      className="city-info__clock"
       numbers={[18, 20]} text="Budapest" />
     <div className="city-info__etc">
       <IconItem className="city-info__temp" iconName="wi-thermometer">10˚C</IconItem>
