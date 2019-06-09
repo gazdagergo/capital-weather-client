@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { BrowserRouter, Route } from "react-router-dom";
-import Page1Container from '../../containers/Page1Container';
+import Page1 from '../../screens/Page1';
 import Page3Container from '../../containers/Page3Container';
 import capitalReducer from '../../ducks/capitalReducer';
 import { CITY_ROUTE } from '../../constants';
@@ -18,7 +18,7 @@ const store = createStore(
 const Main = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <Route exact path="/" component={Page1Container} />
+      <Route exact path="/" component={Page1} />
       <Route exact path={`/${CITY_ROUTE}/:cityName/:countryCode`} component={Page3Container} />
     </BrowserRouter>
   </Provider>
