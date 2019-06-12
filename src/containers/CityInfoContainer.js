@@ -36,7 +36,7 @@ class CityInfoContainer extends Component {
 
   render(){
     const { cityInfo } = this.props;
-    return <CityInfo cityInfo={cityInfo} />
+    return <CityInfo {...cityInfo} />
   }
 }
 
